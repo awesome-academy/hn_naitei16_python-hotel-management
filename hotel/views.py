@@ -10,6 +10,7 @@ from django.contrib.auth.decorators import login_required, permission_required
 from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.utils.translation import ugettext_lazy as _
+from django.contrib.admin.views.decorators import staff_member_required
 from .models import Room, Booking, RoomImage, User
 from .forms import NewUserForm, EditRoomForm, UserForm
 from datetime import datetime, date, timedelta
@@ -207,7 +208,7 @@ def list_users(request):
         return render(request,'user/list-users.html',context)
  
 @login_required
-@permission_required('hotel.staff_booking_list', raise_exception=True)
+@staff_member_required
 def list_bookings_staff(request):
     bookings = Booking.objects.filter(status = constants.WAITING)
     if request.method == "GET": 
