@@ -9,5 +9,6 @@ urlpatterns = [
     path('list-bookings/', views.list_bookings_staff, name = "list-bookings-staff"),
     path('statistic_page/', views.statistic_page, name = 'statistic_page'),
     path('payment/<uuid:booking_id>', views.payment, name= 'payment'),
-    path('user-list-bookings/', views.list_bookings_user, name= 'list-booking-user')
+    path('user-list-bookings/', views.list_bookings_user, name= 'list-booking-user'),
+    path('service/<uuid:booking_id>', views.request_service, name = 'request-service'),
 ]

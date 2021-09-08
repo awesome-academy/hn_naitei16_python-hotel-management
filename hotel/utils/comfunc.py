@@ -20,14 +20,13 @@ def validate_date(request, start, end, bookStart, bookEnd):
             if start <= bookStart.date() <= end:
                 messages.error(request, _("Start date has been booked"))
                 return False
-            elif start <= bookStart.date() <= end:
+            elif start <= bookEnd.date() <= end:
                 messages.error(request, _("End date has been booked"))
                 return False
             elif bookStart.date() < start and end < bookEnd.date():
                 messages.error(request, _("The date has been booked"))
                 return False
-            else:
-                return True
+        return True
 
 def get_total_all_bill(bills):
     total = 0
