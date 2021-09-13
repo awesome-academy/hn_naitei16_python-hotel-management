@@ -5,38 +5,44 @@
 <div class="container">
     <div class="shadow-lg p-5">
         <div class="row mt-5">
-            <div class="col-12">
-                <div class="p-2 h4">
-                    <span>{% trans "Room Number:" %}</span>
-                    <span class="font-weight-normal">{{room.id}}</span>
+            <div class="row col-12">
+                <div class ="col-6">
+                    <div class="image">
+                        {%for url in room.roomimage_set.all%}
+                            <div class="col-4">
+                                <img src="{% static url.img_url %}" style="width: 400px; height: 300px;" />
+                            </div>
+                        {% endfor %}
+                    </div>
                 </div>
-                <div class="p-2 h4">
-                    <span>{% trans "Number Of Beds:" %}</span>
-                    <span class="font-weight-normal">{{room.numberOfBeds}}</span>
+                <div class ="col-6">
+                    <div class="p-2 h4">
+                        <span>{% trans "Room Number:" %}</span>
+                        <span class="font-weight-normal">{{room.id}}</span>
+                    </div>
+                    <div class="p-2 h4">
+                        <span>{% trans "Number Of Beds:" %}</span>
+                        <span class="font-weight-normal">{{room.numberOfBeds}}</span>
+                    </div>
+                    <div class="p-2 h4">
+                        <span>{% trans "Price:" %}</span>
+                        <span class="font-weight-normal">{{room.room_price}}</span>
+                    </div>
+                    <div class="p-2 h4">
+                        <span>{% trans "Room Type:" %}</span>
+                        <span class="font-weight-normal">{{ room.roomType}}</span>
+                    </div>
+                    <div class="p-2 h4">
+                        <span>{% trans "Capacity: " %}</span>
+                        <span class="font-weight-normal">{{room.capacity}}</span>
+                    </div>
+                    <div class="p-2 h4">
+                        <span>{% trans "Description:" %}</span>
+                        <span class="font-weight-normal">{{room.description}}</span>
+                    </div>
                 </div>
-                <div class="p-2 h4">
-                    <span>{% trans "Price:" %}</span>
-                    <span class="font-weight-normal">{{room.room_price}}</span>
-                </div>
-                <div class="p-2 h4">
-                    <span>{% trans "Room Type:" %}</span>
-                    <span class="font-weight-normal">{{ room.roomType}}</span>
-                </div>
-                <div class="p-2 h4">
-                    <span>{% trans "Capacity: " %}</span>
-                    <span class="font-weight-normal">{{room.capacity}}</span>
-                </div>
-                <div class="p-2 h4">
-                    <span>{% trans "Description:" %}</span>
-                    <span class="font-weight-normal">{{room.description}}</span>
-                </div>
-                <div class="image">
-                    {%for url in room.roomimage_set.all%}
-                        <div class="col-4">
-                            <img src="{% static url.img_url %}" />
-                        </div>
-                    {% endfor %}
-                </div>
+            </div>
+            <div class='col-12'>
                 {% if user.is_authenticated %}
                     <div>
                         <form method="POST">
@@ -61,8 +67,6 @@
                         </form>
                     </div>
                 {% endif %}
-            </div>
-            <div class='col-12'>
                 <h4>{% trans 'Booking:' %}</h4>
                 {% for book in bookings %}
                     {% if book.status == "approved" %}

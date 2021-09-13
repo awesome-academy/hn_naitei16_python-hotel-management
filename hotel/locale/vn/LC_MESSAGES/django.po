@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-26 14:59+0700\n"
+"POT-Creation-Date: 2021-09-09 02:21+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,60 +53,48 @@ msgstr "Địa chỉ email"
 msgid "Hotel Management System - IT Training 2021 ©"
 msgstr "Hệ Thống Quản Lý Khách Sạn - IT Training 2021 ©"
 
-#: templates/base/nav.html:9
-msgid "Admin"
-msgstr "Quản trị viên"
-
-#: templates/base/nav.html:11
-msgid "Guest"
-msgstr "Khách"
-
 #: templates/base/nav.html:14
-msgid "Welcome to our hotel"
-msgstr "Chào mừng đến với khách sạn của chúng tôi"
-
-#: templates/base/nav.html:24
 msgid "Home"
 msgstr "Trang chủ"
 
-#: templates/base/nav.html:29
+#: templates/base/nav.html:19
 msgid "Options"
 msgstr "Lựa chọn"
 
-#: templates/base/nav.html:34 templates/base/nav.html:41
+#: templates/base/nav.html:24 templates/base/nav.html:31
 msgid "Profile"
 msgstr "Trang cá nhân"
 
-#: templates/base/nav.html:35 templates/landing_page/page.html:10
+#: templates/base/nav.html:25 templates/landing_page/page.html:10
 msgid "Rooms"
 msgstr "Danh sách phòng"
 
-#: templates/base/nav.html:36
+#: templates/base/nav.html:26
 msgid "Add room"
 msgstr "Tạo phòng"
 
-#: templates/base/nav.html:37
+#: templates/base/nav.html:27
 msgid "List users"
 msgstr "Danh sách người dùng"
 
-#: templates/base/nav.html:38 templates/base/nav.html:43
+#: templates/base/nav.html:28 templates/base/nav.html:33
 msgid "List bookings"
 msgstr "Danh sách đặt phòng"
 
-#: templates/base/nav.html:39
+#: templates/base/nav.html:29
 msgid "Statistic page"
 msgstr "Trang thống kê"
 
-#: templates/base/nav.html:42 templates/base/nav.html:46
+#: templates/base/nav.html:32 templates/base/nav.html:36
 #: templates/statistic/staff_statistic_page.html:23
 msgid "Room"
 msgstr "Phòng"
 
-#: templates/base/nav.html:52
+#: templates/base/nav.html:42
 msgid "Log Out"
 msgstr "Đăng xuất"
 
-#: templates/base/nav.html:56
+#: templates/base/nav.html:46
 msgid "Log In"
 msgstr "Đăng nhập"
 
@@ -216,33 +204,65 @@ msgstr "Hãy điền đúng đoạn mã chúng tôi gửi qua mail của bạn"
 msgid "Pay"
 msgstr "Trả"
 
-#: templates/registration/login.html:3
+#: templates/payment/service.html:11
+msgid "Service"
+msgstr "Dịch vụ phòng"
+
+#: templates/payment/service.html:16
+#, fuzzy
+#| msgid "Booking:"
+msgid "Booking ID: "
+msgstr ""
+
+#: templates/payment/service.html:23
+#, fuzzy
+#| msgid "User Name"
+msgid "Service Name"
+msgstr "Tên dịch vụ"
+
+#: templates/payment/service.html:24 templates/room/rooms.html:47
+msgid "Price"
+msgstr "Giá"
+
+#: templates/payment/service.html:25
+#, fuzzy
+#| msgid "Description:"
+msgid "Description"
+msgstr "Mô tả:"
+
+#: templates/payment/service.html:39
+msgid "Confirm"
+msgstr "Xác nhận"
+
+#: templates/registration/login.html:8
+#, fuzzy
+#| msgid "Login"
+msgid "Login Form"
+msgstr "Đăng nhập"
+
+#: templates/registration/login.html:12
 msgid "Your username and password didn't match. Please try again."
 msgstr "Tên đăng nhập và mật khẩu không khớp!"
 
-#: templates/registration/login.html:8
-msgid ""
-"Your account doesn't have access to this page. To proceed, please login with "
-"an account that has access."
-msgstr "Tài khoản của bạn không có quyền truy cập trang này"
-
-#: templates/registration/login.html:10
+#: templates/registration/login.html:16
 msgid "Please login to see this page."
 msgstr "Hãy đăng nhập để xem trang này"
 
-#: templates/registration/login.html:26
+#: templates/registration/login.html:39
 msgid "Login"
 msgstr "Đăng nhập"
 
-#: templates/registration/login.html:31
-msgid "Lost password?"
-msgstr "Quên mật khẩu?"
-
-#: templates/registration/register.html:2
-msgid "Register"
+#: templates/registration/login.html:42
+#, fuzzy
+#| msgid "Register"
+msgid "Register?"
 msgstr "Đăng kí"
 
 #: templates/registration/register.html:8
+msgid "Register"
+msgstr "Đăng kí"
+
+#: templates/registration/register.html:15
 msgid "Submit"
 msgstr "Xác nhận"
 
@@ -320,7 +340,7 @@ msgstr "Lọc bằng thời gian"
 msgid "Filter"
 msgstr "Lọc"
 
-#: templates/room/rooms.html:39 templates/user/user-profile.html:43
+#: templates/room/rooms.html:39 templates/user/user-profile.html:54
 msgid "Room Number"
 msgstr "Phòng số"
 
@@ -331,10 +351,6 @@ msgstr "Sức chứa"
 #: templates/room/rooms.html:43
 msgid "Number of Beds"
 msgstr "Số giường"
-
-#: templates/room/rooms.html:47
-msgid "Price"
-msgstr "Giá"
 
 #: templates/room/rooms.html:63
 msgid "View"
@@ -398,31 +414,31 @@ msgstr "Lưu"
 msgid "Search"
 msgstr "Tìm kiếm"
 
-#: templates/user/list-users.html:22 templates/user/user-profile.html:10
+#: templates/user/list-users.html:23 templates/user/user-profile.html:10
 msgid "First Name:"
 msgstr "Tên:"
 
-#: templates/user/list-users.html:27 templates/user/user-profile.html:15
+#: templates/user/list-users.html:28 templates/user/user-profile.html:15
 msgid "Surname:"
 msgstr "Họ:"
 
-#: templates/user/list-users.html:32 templates/user/user-profile.html:20
+#: templates/user/list-users.html:33 templates/user/user-profile.html:31
 msgid "Email:"
 msgstr ""
 
-#: templates/user/list-users.html:37 templates/user/user-profile.html:25
+#: templates/user/list-users.html:38 templates/user/user-profile.html:36
 msgid "Phone Number:"
 msgstr "Số điện thoại:"
 
-#: templates/user/list-users.html:42 templates/user/user-profile.html:30
+#: templates/user/list-users.html:43 templates/user/user-profile.html:41
 msgid "Account Creation Date:"
 msgstr "Thời gian tạo tài khoản:"
 
-#: templates/user/list-users.html:47 templates/user/user-profile.html:39
+#: templates/user/list-users.html:48 templates/user/user-profile.html:50
 msgid "Booking List:"
 msgstr "Danh sách phòng đã đặt:"
 
-#: templates/user/list-users.html:60
+#: templates/user/list-users.html:63
 msgid "No users found with the phrase"
 msgstr "Không tìm thấy người dùng nào với cụm từ "
 
@@ -446,7 +462,7 @@ msgid "End"
 msgstr "Kết thúc"
 
 #: templates/user/staff-list-bookings.html:24
-#: templates/user/user-list-booking.html:17 templates/user/user-profile.html:45
+#: templates/user/user-list-booking.html:17 templates/user/user-profile.html:56
 msgid "Status"
 msgstr "Trạng thái"
 
@@ -468,17 +484,31 @@ msgstr "Danh sách phòng đã đặt:"
 msgid "Cancel"
 msgstr "Huỷ"
 
-#: templates/user/user-profile.html:35
+#: templates/user/user-profile.html:20 templates/user/user-profile.html:25
+#, fuzzy
+#| msgid "User Name"
+msgid "User type:"
+msgstr "Tên tài khoản"
+
+#: templates/user/user-profile.html:21
+msgid "Admin"
+msgstr "Quản trị viên"
+
+#: templates/user/user-profile.html:26
+msgid "Guest"
+msgstr "Khách"
+
+#: templates/user/user-profile.html:46
 msgid "Edit"
 msgstr "Chỉnh sửa"
 
-#: templates/user/user-profile.html:44
+#: templates/user/user-profile.html:55
 #, fuzzy
 #| msgid "Last Date"
 msgid "Date"
 msgstr "Ngày cuối"
 
-#: templates/user/user-profile.html:59
+#: templates/user/user-profile.html:70
 msgid "Payment"
 msgstr "Thanh toán"
 
@@ -518,7 +548,7 @@ msgstr "Số lượng đặt phòng mỗi loại"
 msgid "Booking figure"
 msgstr "Danh sách phòng đã đặt:"
 
-#: views.py:123
+#: views.py:122
 msgid "Success"
 msgstr "Đặt phòng thành công"
 
@@ -535,6 +565,17 @@ msgstr "Xác nhận thanh toán"
 #: views.py:345
 msgid "successful payment"
 msgstr "Thanh toán thành công"
+
+#~ msgid "Welcome to our hotel"
+#~ msgstr "Chào mừng đến với khách sạn của chúng tôi"
+
+#~ msgid ""
+#~ "Your account doesn't have access to this page. To proceed, please login "
+#~ "with an account that has access."
+#~ msgstr "Tài khoản của bạn không có quyền truy cập trang này"
+
+#~ msgid "Lost password?"
+#~ msgstr "Quên mật khẩu?"
 
 #~ msgid "English"
 #~ msgstr "Tiếng Anh"

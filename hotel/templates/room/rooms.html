@@ -34,6 +34,7 @@
     <table class="table table-hover table-striped">
         <thead class="bg-secondary rounded">
             <tr>
+                <th></th>
                 <form action="" method="POST">
                     {% csrf_token %}
                     <th>{% trans "Room Number" %}<input type="number" name="id" value="{{id}}"
@@ -55,15 +56,16 @@
         <tbody>
             {% for room in rooms %}
             <tr>
-                <td>{{ room.id}}</td>
-                <td>{{ room.capacity }}</td>
-                <td>{{ room.numberOfBeds }}</td>
-                <td>{{ room.roomType }}</td>
-                <td>{{ room.room_price }}</td>
-                <td> <a href="{% url 'room-profile' room.id %}" class="btn btn-info btn-sm w-100">{% trans "View" %}</a>
+                <td><img src="{% static room.roomimage_set.all.get %}" class="img-fluid" alt="Responsive image" /></td>
+                <td class="text-center align-middle">{{ room.id}}</td>
+                <td class="text-center align-middle">{{ room.capacity }}</td>
+                <td class="text-center align-middle">{{ room.numberOfBeds }}</td>
+                <td class="text-center align-middle">{{ room.roomType }}</td>
+                <td class="text-center align-middle">{{ room.room_price }}</td>
+                <td class="text-center align-middle"> <a href="{% url 'room-profile' room.id %}" class="btn btn-info btn-sm w-100">{% trans "View" %}</a>
                 </td>
                 {% if user.is_staff %}
-                <td>
+                <td class="text-center align-middle">
                     <a href="{% url 'room-edit' room.id %}"
                         class="btn btn-sm btn-primary w-100">
                         {% trans "Edit&nbsp;Room" %}

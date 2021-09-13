@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-26 14:59+0700\n"
+"POT-Creation-Date: 2021-09-09 02:21+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,60 +53,48 @@ msgstr ""
 msgid "Hotel Management System - IT Training 2021 ©"
 msgstr ""
 
-#: templates/base/nav.html:9
-msgid "Admin"
-msgstr ""
-
-#: templates/base/nav.html:11
-msgid "Guest"
-msgstr ""
-
 #: templates/base/nav.html:14
-msgid "Welcome to our hotel"
-msgstr ""
-
-#: templates/base/nav.html:24
 msgid "Home"
 msgstr ""
 
-#: templates/base/nav.html:29
+#: templates/base/nav.html:19
 msgid "Options"
 msgstr ""
 
-#: templates/base/nav.html:34 templates/base/nav.html:41
+#: templates/base/nav.html:24 templates/base/nav.html:31
 msgid "Profile"
 msgstr ""
 
-#: templates/base/nav.html:35 templates/landing_page/page.html:10
+#: templates/base/nav.html:25 templates/landing_page/page.html:10
 msgid "Rooms"
 msgstr ""
 
-#: templates/base/nav.html:36
+#: templates/base/nav.html:26
 msgid "Add room"
 msgstr ""
 
-#: templates/base/nav.html:37
+#: templates/base/nav.html:27
 msgid "List users"
 msgstr ""
 
-#: templates/base/nav.html:38 templates/base/nav.html:43
+#: templates/base/nav.html:28 templates/base/nav.html:33
 msgid "List bookings"
 msgstr ""
 
-#: templates/base/nav.html:39
+#: templates/base/nav.html:29
 msgid "Statistic page"
 msgstr ""
 
-#: templates/base/nav.html:42 templates/base/nav.html:46
+#: templates/base/nav.html:32 templates/base/nav.html:36
 #: templates/statistic/staff_statistic_page.html:23
 msgid "Room"
 msgstr ""
 
-#: templates/base/nav.html:52
+#: templates/base/nav.html:42
 msgid "Log Out"
 msgstr ""
 
-#: templates/base/nav.html:56
+#: templates/base/nav.html:46
 msgid "Log In"
 msgstr ""
 
@@ -208,33 +196,55 @@ msgstr ""
 msgid "Pay"
 msgstr ""
 
-#: templates/registration/login.html:3
-msgid "Your username and password didn't match. Please try again."
+#: templates/payment/service.html:11
+msgid "Service"
+msgstr ""
+
+#: templates/payment/service.html:16
+msgid "Booking ID: "
+msgstr ""
+
+#: templates/payment/service.html:23
+msgid "Service Name"
+msgstr ""
+
+#: templates/payment/service.html:24 templates/room/rooms.html:47
+msgid "Price"
+msgstr ""
+
+#: templates/payment/service.html:25
+msgid "Description"
+msgstr ""
+
+#: templates/payment/service.html:39
+msgid "Confirm"
 msgstr ""
 
 #: templates/registration/login.html:8
-msgid ""
-"Your account doesn't have access to this page. To proceed, please login with "
-"an account that has access."
+msgid "Login Form"
 msgstr ""
 
-#: templates/registration/login.html:10
+#: templates/registration/login.html:12
+msgid "Your username and password didn't match. Please try again."
+msgstr ""
+
+#: templates/registration/login.html:16
 msgid "Please login to see this page."
 msgstr ""
 
-#: templates/registration/login.html:26
+#: templates/registration/login.html:39
 msgid "Login"
 msgstr ""
 
-#: templates/registration/login.html:31
-msgid "Lost password?"
-msgstr ""
-
-#: templates/registration/register.html:2
-msgid "Register"
+#: templates/registration/login.html:42
+msgid "Register?"
 msgstr ""
 
 #: templates/registration/register.html:8
+msgid "Register"
+msgstr ""
+
+#: templates/registration/register.html:15
 msgid "Submit"
 msgstr ""
 
@@ -312,7 +322,7 @@ msgstr ""
 msgid "Filter"
 msgstr ""
 
-#: templates/room/rooms.html:39 templates/user/user-profile.html:43
+#: templates/room/rooms.html:39 templates/user/user-profile.html:54
 msgid "Room Number"
 msgstr ""
 
@@ -322,10 +332,6 @@ msgstr ""
 
 #: templates/room/rooms.html:43
 msgid "Number of Beds"
-msgstr ""
-
-#: templates/room/rooms.html:47
-msgid "Price"
 msgstr ""
 
 #: templates/room/rooms.html:63
@@ -386,31 +392,31 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: templates/user/list-users.html:22 templates/user/user-profile.html:10
+#: templates/user/list-users.html:23 templates/user/user-profile.html:10
 msgid "First Name:"
 msgstr ""
 
-#: templates/user/list-users.html:27 templates/user/user-profile.html:15
+#: templates/user/list-users.html:28 templates/user/user-profile.html:15
 msgid "Surname:"
 msgstr ""
 
-#: templates/user/list-users.html:32 templates/user/user-profile.html:20
+#: templates/user/list-users.html:33 templates/user/user-profile.html:31
 msgid "Email:"
 msgstr ""
 
-#: templates/user/list-users.html:37 templates/user/user-profile.html:25
+#: templates/user/list-users.html:38 templates/user/user-profile.html:36
 msgid "Phone Number:"
 msgstr ""
 
-#: templates/user/list-users.html:42 templates/user/user-profile.html:30
+#: templates/user/list-users.html:43 templates/user/user-profile.html:41
 msgid "Account Creation Date:"
 msgstr ""
 
-#: templates/user/list-users.html:47 templates/user/user-profile.html:39
+#: templates/user/list-users.html:48 templates/user/user-profile.html:50
 msgid "Booking List:"
 msgstr ""
 
-#: templates/user/list-users.html:60
+#: templates/user/list-users.html:63
 msgid "No users found with the phrase"
 msgstr ""
 
@@ -434,7 +440,7 @@ msgid "End"
 msgstr ""
 
 #: templates/user/staff-list-bookings.html:24
-#: templates/user/user-list-booking.html:17 templates/user/user-profile.html:45
+#: templates/user/user-list-booking.html:17 templates/user/user-profile.html:56
 msgid "Status"
 msgstr ""
 
@@ -454,15 +460,27 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: templates/user/user-profile.html:35
+#: templates/user/user-profile.html:20 templates/user/user-profile.html:25
+msgid "User type:"
+msgstr ""
+
+#: templates/user/user-profile.html:21
+msgid "Admin"
+msgstr ""
+
+#: templates/user/user-profile.html:26
+msgid "Guest"
+msgstr ""
+
+#: templates/user/user-profile.html:46
 msgid "Edit"
 msgstr ""
 
-#: templates/user/user-profile.html:44
+#: templates/user/user-profile.html:55
 msgid "Date"
 msgstr ""
 
-#: templates/user/user-profile.html:59
+#: templates/user/user-profile.html:70
 msgid "Payment"
 msgstr ""
 
@@ -498,7 +516,7 @@ msgstr ""
 msgid "Booking figure"
 msgstr ""
 
-#: views.py:123
+#: views.py:122
 msgid "Success"
 msgstr ""
 

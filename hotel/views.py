@@ -12,7 +12,8 @@ from django.views import generic
 from django.core.mail import send_mail
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.utils.translation import ugettext_lazy as _
-from .models import Room, Booking, RoomImage, User, Bill
+from django.db import transaction
+from .models import Room, Booking, RoomImage, Service, User, Bill, RoomService
 from .forms import NewUserForm, EditRoomForm, UserForm
 from hotel.utils import constants, comfunc
 from datetime import datetime, date, timedelta
@@ -39,7 +40,7 @@ def index(request):
 # @login_required
 # room function (add, edit, filter)
 def rooms(request):
-    rooms = Room.objects.all()
+    rooms = Room.objects.all().prefetch_related("roomimage_set")
     check_in = None
     check_out = None
     def check_valid(start_date, end_date):
@@ -97,7 +98,7 @@ def rooms(request):
 # @login_required
 def room_profile(request, number):
     room = Room.objects.filter(id = number).prefetch_related("roomimage_set").first()
-    bookings = Booking.objects.filter(room_id= room)
+    bookings = Booking.objects.filter(Q(room_id= room), Q(status = constants.APPROVED))
     if request.user.id is not None:
         guest = User.objects.filter(id = request.user.id).first()
         checked = 1
@@ -290,6 +291,7 @@ def payment(request, booking_id):
                    for _ in range(10))
 
     booking = Booking.objects.filter(booking_id = booking_id).first()
+    room_service = RoomService.objects.filter(booking_id = booking_id).prefetch_related("service_set")
     delta = booking.end_date - booking.start_date
     total = delta.days * booking.room_price
     message = ''
@@ -336,14 +338,14 @@ def payment(request, booking_id):
     if request.method == 'POST':
         if "pay" in data:
             tempCode = data.get('tempCode')
-            inputCode = data.get('inputCode')
+            inputCode = data.get('inputCode')        
             if tempCode == inputCode:
                 summary = request.user.email+ " paid booking( " + str(booking_id) + " )"
                 newBill = Bill(booking_id = booking, summary = summary, totalAmount= total)
                 newBill.save()
                 message = str(_("successful payment"))
                 return redirect('user-profile')
-    context = {"message": message, "code": code, "flag": flag, "booking": booking, "img_url": room_img}
+    context = {"message": message, "code": code, "flag": flag, "booking": booking, "img_url": room_img, "room_service": room_service}
     return render(request, 'payment/payment.html', context)
 
 def list_bookings_user(request):
@@ -358,3 +360,26 @@ def list_bookings_user(request):
         "bookings": bookings
     }
     return render(request, 'user/user-list-booking.html', context)
+
+@login_required
+def request_service(request,booking_id):
+    booking = Booking.objects.filter(booking_id = booking_id).first()
+    service = Service.objects.all()
+    if request.method == "POST":
+        try:
+            data_p = request.POST
+            if "service" in data_p:
+                with transaction.atomic():
+                    serv = data_p.getlist('service')
+                    for i in serv:
+                        service_id = service.filter(id = i).first()
+                        newRequest = RoomService(booking_id = booking, service_id = service_id, service_price = service_id.service_price)
+                        newRequest.save()
+                return redirect("payment", booking.booking_id)
+        except Exception as e:
+            messages.error(request, _("Something went wrong!"))
+    context = {
+        "booking": booking,
+        "service": service
+    }
+    return render(request, 'payment/service.html', context)
